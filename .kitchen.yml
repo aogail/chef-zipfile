@@ -1,0 +1,20 @@
+---
+driver:
+  name: vagrant
+  synced_folders:
+    - ['pkg', '/opt/kitchen_test/extract']
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: centos-6.5
+
+suites:
+  - name: extract
+    run_list:
+      - recipe[zipfile_test::extract]
+    attributes:
+      extract:
+        from: /opt/kitchen_test/extract/to_extract.zip
+        into: /tmp/to_extract

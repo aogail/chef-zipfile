@@ -1,3 +1,3 @@
-zipfile '/tmp/my_stuff.zip' do
-  into '/tmp/my_stuff'
+zipfile node[:extract][:from] do
+  into node[:extract][:into]
 end
