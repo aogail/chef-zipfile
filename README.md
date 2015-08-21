@@ -2,6 +2,8 @@
 
 An LWRP for extracting zip files.
 
+Note: This is currently very much a work in progress.
+
 ## Platforms
 
 This is implemented in pure ruby, so it should run anywhere.
