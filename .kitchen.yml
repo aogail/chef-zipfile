@@ -9,6 +9,12 @@ provisioner:
 
 platforms:
   - name: centos-6.5
+  - name: windows-7
+    box: win7-64
+    driver:
+      gui: true
+      customize:
+        memory: 4096
 
 suites:
   - name: extract
