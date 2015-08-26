@@ -6,11 +6,14 @@ require 'stove/rake_task'
 require 'rake/packagetask'
 
 RSpec::Core::RakeTask.new(:chefspec)
+Kitchen::RakeTasks.new
 Stove::RakeTask.new
-
-task :test => :chefspec
 
 Rake::PackageTask.new('to_extract', :noversion) do |p|
   p.need_zip = true
   p.package_files.include 'test/**/extract_spec.rb'
 end
+
+task 'kitchen:all' => 'package'
+task :test => [:chefspec, 'kitchen:all']
+
