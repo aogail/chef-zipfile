@@ -8,7 +8,7 @@ provisioner:
   name: chef_solo
 
 platforms:
-  - name: centos-6.5
+  - name: boxcutter/centos72
   - name: windows-7
     box: win7-64
     driver:
