@@ -24,3 +24,6 @@ suites:
       extract:
         from: /opt/kitchen_test/extract/to_extract.zip
         into: /tmp/to_extract
+      overwrite:
+        from: /opt/kitchen_test/extract/to_extract.zip
+        into: /tmp/to_extract_overwrite
