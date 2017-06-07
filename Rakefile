@@ -15,5 +15,5 @@ Rake::PackageTask.new('to_extract', :noversion) do |p|
 end
 
 task 'kitchen:all' => 'package'
-task 'kitchen:extract-boxcutter-centos72' => 'package'
+task 'kitchen:extract-centos' => 'package'
 task :test => [:chefspec, 'kitchen:all']
