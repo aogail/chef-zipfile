@@ -6,6 +6,6 @@ DEPENDENCIES
     path: test/cookbooks/zipfile_test
 
 GRAPH
-  zipfile (0.1.0)
+  zipfile (0.2.0)
   zipfile_test (0.0.0)
     zipfile (>= 0.0.0)
