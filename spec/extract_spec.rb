@@ -6,7 +6,12 @@ describe 'zipfile_test::extract' do
     context "on #{platform}" do
       subject(:chef_run) do
         ChefSpec::SoloRunner.new(platform: platform,
-                                 version: version).converge(described_recipe)
+                                 version: version) do |node|
+          node.normal['extract']['from'] = zip_path
+          node.normal['extract']['into'] = output_path
+          node.normal['overwrite']['from'] = zip_path
+          node.normal['overwrite']['into'] = output_path
+        end.converge(described_recipe)
       end
 
       let(:zip_path) { '/tmp/my_stuff.zip' }
