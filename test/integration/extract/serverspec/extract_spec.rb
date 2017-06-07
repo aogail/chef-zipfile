@@ -10,7 +10,7 @@ else
   set :backend, :exec
 end
 
-%w(/tmp/to_extract /tmp/to_extract_overwrite).each do |into_dir|
+%w(/tmp/to_extract /tmp/to_extract_overwrite /tmp/into/nonexistent_parent/a/b/c/d/e/f).each do |into_dir|
   current_path = ''
   %W(#{into_dir} to_extract test integration extract serverspec).each do |path_part|
     current_path = ::File.join(current_path, path_part)

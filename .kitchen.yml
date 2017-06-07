@@ -29,3 +29,6 @@ suites:
       overwrite:
         from: /opt/kitchen_test/extract/to_extract.zip
         into: /tmp/to_extract_overwrite
+      nonexistent_into:
+        from: /opt/kitchen_test/extract/to_extract.zip
+        into: /tmp/into/nonexistent_parent/a/b/c/d/e/f

@@ -13,3 +13,7 @@ zipfile node[:overwrite][:from] do
   into node[:overwrite][:into]
   overwrite true
 end
+
+zipfile node[:nonexistent_into][:from] do
+  into node[:nonexistent_into][:into]
+end
