@@ -8,11 +8,13 @@ provisioner:
   name: chef_solo
 
 platforms:
-  - name: boxcutter/centos72
-  - name: windows-7
-    box: win7-64
+  - name: centos
     driver:
-      gui: true
+      box: boxcutter/centos72
+  - name: windows
+    driver:
+      box: devopsgroup-io/windows_server-2012r2-standard-amd64-nocm
+      communicator: winrm
       customize:
         memory: 4096
 
