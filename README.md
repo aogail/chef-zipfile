@@ -25,8 +25,9 @@ Its tests are run on CentOS and Windows.
 Since `zipfile` will eventually support both creating and extracting zip files, its attributes are
 essentially "input" and "output".
 
-  * `:from` - source for extraction; name attribute
-  * `:into` - destination for extraction
+  * `from` - source for extraction; name attribute
+  * `into` - destination for extraction
+  * `overwrite` - whether to overwrite existing files
 
 #### Examples
 
