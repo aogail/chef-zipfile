@@ -17,4 +17,4 @@ end
 task 'kitchen:all' => 'package'
 task 'kitchen:extract-centos' => 'package'
 task 'kitchen:extract-windows' => 'package'
-task :test => [:chefspec, 'kitchen:all']
+task :test => %w(repackage chefspec kitchen:all)
