@@ -2,8 +2,6 @@
 
 An LWRP for extracting zip files.
 
-Note: This is currently very much a work in progress.
-
 ## Platforms
 
 This is implemented in pure ruby, so it should run anywhere.
@@ -57,13 +55,11 @@ $ rake chefspec
 
 ### Running integration tests
 
-The integration tests depend upon a particular zip file. It may be created by running the `package` rake task. They
-also require a Windows box to have been added to `vagrant`. I suggest using a
-[boxcutter/windows](https://github.com/boxcutter/windows) VM.
+The integration tests depend upon a particular zip file. It may be created by running the `package` rake task. If you
+use the rake tasks to run Test Kitchen, it will take care of this for you.
 
 ```
-$ rake package
-$ kitchen test
+$ rake test
 ```
 
 The tests expect the content of the spec file to be the same as the file in the `pkg` directory, so any spec changes
@@ -72,7 +68,7 @@ must be followed by re-provisioning the VM.
 ## License
 
 ```
-Copyright 2015 Benjamin Jansen
+Copyright 2015-2017 Benjamin Jansen
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
