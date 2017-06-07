@@ -15,7 +15,6 @@ platforms:
     driver:
       box: devopsgroup-io/windows_server-2012r2-standard-amd64-nocm
       communicator: winrm
-      gui: true
       customize:
         memory: 4096
 
