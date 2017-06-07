@@ -8,9 +8,11 @@ action :extract do
   install_rubyzip_gem
   Zip.on_exists_proc = new_resource.overwrite
   converge_by "Extracting #{new_resource.from} into #{new_resource.into}" do
+    require 'fileutils'
     ::Zip::File.open(new_resource.from) do |zip|
       zip.each do |zipentry|
         destination = ::File.join(new_resource.into, zipentry.name)
+        FileUtils.mkdir_p(File.dirname(destination))
         zip.extract(zipentry, destination)
       end
     end
