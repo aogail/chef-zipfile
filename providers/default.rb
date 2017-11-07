@@ -10,6 +10,10 @@ action :extract do
   converge_by "Extracting #{new_resource.from} into #{new_resource.into}" do
     ::Zip::File.open(new_resource.from) do |zip|
       zip.each do |zipentry|
+        folder = ::File.join(new_resource.into, ::File.dirname(zipentry.name))
+        unless ::Dir.exist?(folder)
+          ::FileUtils.mkpath folder
+        end
         destination = ::File.join(new_resource.into, zipentry.name)
         zip.extract(zipentry, destination)
       end
@@ -25,4 +29,5 @@ def install_rubyzip_gem
     compile_time true
   end
   require 'zip'
+  require 'fileutils'
 end
