@@ -17,4 +17,5 @@ end
 task 'kitchen:all' => 'package'
 task 'kitchen:extract-centos' => 'package'
 task 'kitchen:extract-windows' => 'package'
+desc 'Recreate the test zip file and execute unit and integration tests'
 task :test => %w(repackage chefspec kitchen:all)
